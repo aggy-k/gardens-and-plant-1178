@@ -1,0 +1,14 @@
+<div class="w-50 mx-auto">
+  <h1>PlantTags#new</h1>
+  <p>Find me in app/views/plant_tags/new.html.erb</p>
+  <%= simple_form_for [@plant, @plant_tag] do |f| %>
+    <%= f.association :tag, collection: Tag.order(:name), input_html: { multiple: true, data: {controller: 'tom-select'}} %>
+    <%= f.submit %>
+  <% end %>
+
+  <%#= form_with model: [@plant, @plant_tag] do |f| %>
+    <%#= f.select :tag_id, Tag.order(:name).pluck(:name, :id) %>
+  
+  <%# end %>
+  
+</div>
